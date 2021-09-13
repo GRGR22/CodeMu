@@ -1,24 +1,17 @@
-// function get1() {
-// 	return 1;
-// }
-// function get2() {
-// 	return 2;
-// }
-
-// test(get1, get2); // выведет 3
-
-// function test(func1, func2) {
-// 	alert( func1() + func2() );
-// }
-let get1 = function() {
-	return 1;
-}
-let get2 = function() {
-	return 2;
+function func(num1) {
+	return function(num2) {
+		return function(num3) {
+			return function(num4) {
+				return function(num5) {
+					let arr = [];
+					for (let index = 0; index < 5; index++) {						
+						eval('arr[' + index + '] = num' +(index+1))	
+					};
+					return arr;
+				};
+			};	
+		};
+	};
 }
 
-test(get1, get2); // выведет 3
-
-function test(func1, func2) {
-	alert( func1() + func2() );
-}
+console.log (func(2)(3)(4)(5)());
