@@ -1,15 +1,18 @@
-let result = each([2, 3, 4, 5, 6], function(elem, 
-	index) { 
-	return elem * index;
+let result = filter([-1, 2, 3, 4, 5], function(elem) {
+	if (elem > 0) {
+		return true;
+	} else {
+		return false;
+	}
 });
 
 console.log(result);
 
-function each(arr, callback) {
+function filter(arr, callback) {
 	let result = [];
 	
 	for (let i = 0; i<arr.length; i++) {
-		result.push( callback(arr[i], i) ); 
+		callback(arr[i]) ? result.push(arr[i]): 0; 
 	}
 	
 	return result;
