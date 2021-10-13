@@ -1,12 +1,15 @@
-let func = (function() {
-	let num = 1;
+let result = each(['12', '23', '34', '45', '56'], function(str) {
+	return str.split('').reverse().join('') ;
+});
+
+console.log(result);
+
+function each(arr, callback) {
+	let result = [];
 	
-	return function() {
-		alert(num);
-		num++;
-		num>5 ? num = 0: 0;
+	for (let elem of arr) {
+		result.push( callback(elem) ); // вызываем функцию-коллбэк
 	}
-})();
-for (i=0; i<10; i++) {
-	func();
-};
+	
+	return result;
+}
