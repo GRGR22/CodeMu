@@ -1,17 +1,15 @@
-let result = each(['арбуз', 'зарбу', 'узарб', 'бузар', 'рбуза'], function(str) {
-	let newStr = str.split('');
-	newStr[0] = newStr[0].toUpperCase();
-	return newStr.join('') ;
+let result = each([2, 3, 4, 5, 6], function(elem, 
+	index) { 
+	return elem * index;
 });
 
 console.log(result);
 
 function each(arr, callback) {
-	console.log(arr);
 	let result = [];
 	
-	for (let elem of arr) {
-		result.push( callback(elem) ); // вызываем функцию-коллбэк
+	for (let i = 0; i<arr.length; i++) {
+		result.push( callback(arr[i], i) ); 
 	}
 	
 	return result;
