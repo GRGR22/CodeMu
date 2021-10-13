@@ -1,4 +1,4 @@
-let result = filter([-1, 2, 3, 4, 5], function(elem) {
+let result = filter([1, 2, 1, 0, 5], function(elem) {
 	if (elem > 0) {
 		return true;
 	} else {
@@ -9,11 +9,13 @@ let result = filter([-1, 2, 3, 4, 5], function(elem) {
 console.log(result);
 
 function filter(arr, callback) {
-	let result = [];
+	let result = true;
 	
 	for (let i = 0; i<arr.length; i++) {
-		callback(arr[i]) ? result.push(arr[i]): 0; 
-	}
-	
+		if (!callback(arr[i])) {
+			result = false;
+			break;
+		}; 
+	}	
 	return result;
 }
