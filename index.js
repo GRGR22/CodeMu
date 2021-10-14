@@ -1,15 +1,13 @@
-let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+let arr = [1, 2, 3, 4, 5];
 
-let result = each(arr, (elem, index) => (elem * index > 10) );
-
-console.log(result);
-
-function each (arr, cb) {
-	let res = [];
-	for (i=0; i< arr.length; i++) {
-		for (j=0; j< arr[i].length; j++) {
-			res.push(cb(arr[i] [j], i+j))
-		}
+function getSum(arr) {
+	let sum = arr.shift()**2;
+	
+	if (arr.length !== 0) {
+		sum += getSum(arr);
 	}
-	return res
-};
+	
+	return sum;
+}
+
+console.log(getSum(arr));
