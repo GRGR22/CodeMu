@@ -1,11 +1,14 @@
-function func(obj) {
-	for (let elem in obj) {
-		if (typeof obj[elem] == 'object') {
-			func(obj[elem]);
+let res = [];
+function func(arr) {
+	
+	for (let elem of arr) {		
+		if (Array.isArray(elem)) {
+			func(elem);
 		} else {
-			console.log(elem, obj[elem]);
+			res.push(elem);
 		}
 	}
+	return res;
 }
-
-func({a: 1, b: {c: 2, d: 3, e: 4}, f: {g: 5, j: 6, k: {l: 7, m: {n: 8, o: 9}}}});
+func([1, [2, 7, 8], [3, 4, [5, [6, 7]]]]);
+console.log(res);
