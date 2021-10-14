@@ -1,14 +1,15 @@
-let res = [];
-function func(arr) {
-	
-	for (let elem of arr) {		
-		if (Array.isArray(elem)) {
-			func(elem);
-		} else {
-			res.push(elem);
-		}
-	}
-	return res;
-}
-func([1, [2, 7, 8], [3, 4, [5, [6, 7]]]]);
-console.log(res);
+// let arr = ['123', '456', '789'];
+
+// let result = arr.map(function(elem) { // последовательно выведет 1, 2, 3, 4, 5
+// 	return elem.split('').reverse().join('');
+// });
+// console.log(arr, result);
+
+let arr = ['123', '456', '789'];
+
+let result = arr.map(function(elem) { 
+	return elem.split('').map(function(str) {
+		return +str;
+	});
+});
+console.log(arr, result);
