@@ -1,21 +1,20 @@
-let result = filter([1, 2, 1, 0, 5], function(elem) {
-	if (elem > 0) {
-		return true;
-	} else {
-		return false;
-	}
-});
+let result = alternate(
+	['a', 'b', 'c', 'd', 'e'],
+	function(elem) {
+		return elem + '!';
+	},
+	function(elem) {
+		return elem + '?';
+	},
+);
 
 console.log(result);
 
-function filter(arr, callback) {
-	let result = true;
+function alternate(arr, callback1, callback2) {
+	let result = [];
 	
 	for (let i = 0; i<arr.length; i++) {
-		if (!callback(arr[i])) {
-			result = false;
-			break;
-		}; 
+		((i+1) % 2) ? result.push(callback1(arr[i])):  result.push(callback2(arr[i]));
 	}	
 	return result;
 }
