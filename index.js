@@ -1,20 +1,15 @@
-let result = alternate(
-	['a', 'b', 'c', 'd', 'e'],
-	function(elem) {
-		return elem + '!';
-	},
-	function(elem) {
-		return elem + '?';
-	},
-);
+let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+let result = each(arr, (elem, index) => (elem * index > 10) );
 
 console.log(result);
 
-function alternate(arr, callback1, callback2) {
-	let result = [];
-	
-	for (let i = 0; i<arr.length; i++) {
-		((i+1) % 2) ? result.push(callback1(arr[i])):  result.push(callback2(arr[i]));
-	}	
-	return result;
-}
+function each (arr, cb) {
+	let res = [];
+	for (i=0; i< arr.length; i++) {
+		for (j=0; j< arr[i].length; j++) {
+			res.push(cb(arr[i] [j], i+j))
+		}
+	}
+	return res
+};
