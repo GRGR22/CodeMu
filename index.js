@@ -1,33 +1,24 @@
-// let arr = ['123', '456', '789'];
+//filter возвращает новый массив, в который войдут только те элементы, для которых коллбэк вернет true.
 
-// let result = arr.map(function(elem) { // последовательно выведет 1, 2, 3, 4, 5
-// 	return elem.split('').reverse().join('');
-// });
-// console.log(arr, result);
+// let arr = [1, 2, 3, 4, 5];
 
-// let arr = ['123', '456', '789'];
-
-// let result = arr.map(function(elem) { 
-// 	return elem.split('').map(function(str) {
-// 		return +str;
-// 	});
-// });
-// console.log(arr, result);
-
-// let arr = [2, 4, 6, 8, 10];
-
-// let result = arr.map(function(elem, index) {
-// 	return elem*index;
+// let result = arr.filter(function(elem) {
+// 	return elem % 2 == 0;
 // });
 
-// console.log(result); 
+// let arr = ['-1', '222222', '33333', '444', '55555555555'];
+// console.log( arr.filter(elem => elem.length > 5) );
 
-let arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+// let arr = [1, 2, 3, 14, 50];
 
-let result = arr.map(function(elem) {
-	return elem.map(function(num) {
-		return num * num;
-	});
-});
+// console.log( arr.filter(function (el, idx) {
+// 	return el*idx > 30
+// }));
 
-console.log(result);
+// let arr = [1, 2, [3, 4], 5, [6, 7]];
+// console.log( arr.filter(elem => !Array.isArray(elem)) );
+
+// let arr = [1, 2, 3, 4, 5];
+// console.log( arr.filter(elem => elem % 2 == 0).length ); //кол-во четн элем
+let arr = [1, -2, -3, -4, 5];
+console.log( arr.filter(elem => elem < 0).length );
