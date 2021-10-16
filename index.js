@@ -1,4 +1,7 @@
-//some возвращает true, если хотя бы для одного элемента коллбэк вернул true
-let arr = [2, 4, 6, 8];
-
-console.log(arr.some(elem => elem > 0));
+// let arr = [1, 2, 3, 4, 5];
+// function func(num1, num2, num3, num4, num5) {
+// 	return num1 + num2 + num3 + num4 + num5;
+// }
+// console.log(func(...arr))
+let arr = [1, 2, 3, 4, 5];
+console.log(Math.min(...arr));
