@@ -1,23 +1,46 @@
-// function func([name, surname, department, position, salary]) {
-// 	console.log(name, surname, department, position, salary)
-// }
-// func( ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000] );
+// let date = new Date();
+// console.log (date.getMonth())
+// let day  = date.getDay();
+// let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
 
-// function func([name, surname, department, position = 'джуниор']) {
-// }
-// func( ['Иван', 'Иванов', 'отдел разработки'] );
+// console.log(days[day]);
 
-// function func(department, [name, surname], [year, month, day]) {
-// console.log(department, name, surname, year, month, day)
-// }
-// func( 'отдел разработки', ['Иван', 'Иванов'], [2018, 12, 31] );
+// let months = [
+// 	'янв', 'фев', 'мар', 'апр', 'май', 'июн',
+// 	'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'
+// ];
+// console.log(months[date.getMonth()])
 
-// function func({color, width, height}) {
-// 	console.log(color, width, height)//red 400 500
-// }
-// func( {color: 'red', width: 400, height: 500} );
+// let date = new Date(1979, 4+1, 9+1); // установим 9 апр 1979 года
+// let day  = date.getDay()+1;
+// let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
 
-function func({width, height, color = 'black'}) {
-	console.log(color, width, height); //black 400 500 
-}
-func( {width: 400, height: 500} );
+// console.log(days[day]);
+
+// let date = new Date(2015, 11, 4, 23, 59, 59);
+// console.log(date.getTime()); //timestamp at ms;
+
+// let now  = new Date();
+// let date = new Date(2015, 11, 4, 23, 59, 59);
+
+// let diff = now.getTime() - date.getTime();
+// console.log(diff); // diff time at ms
+
+// let date = new Date(2020, 2, 0);
+
+// if (date.getDate() == 29) {
+// 	console.log('високосный');
+// } else {
+// 	console.log('обычный');
+// }
+// let year  = 2025;
+// let month = 0;
+// let day   = 32;
+
+// let date = new Date(year, month, day);
+
+// if (date.getFullYear() == year && date.getMonth() == month && date.getDate() == day) {
+// 	console.log('корректна');
+// } else {
+// 	console.log('некорректна');
+// }
