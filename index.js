@@ -1,31 +1,23 @@
-// let options = {
-// 	color: 'red',
-// 	width:  400,
-// 	height: 500,
-// };
-// let {color, width, height} = options;
-// console.log(color, width, height);
+// function func([name, surname, department, position, salary]) {
+// 	console.log(name, surname, department, position, salary)
+// }
+// func( ['Иван', 'Иванов', 'отдел разработки', 'программист', 2000] );
 
-// let obj = {
-// 	year:  2025,
-// 	month: 12,
-// 	day:   31,
-// };
+// function func([name, surname, department, position = 'джуниор']) {
+// }
+// func( ['Иван', 'Иванов', 'отдел разработки'] );
 
-// let {year: y, month: m, day: d} = obj; //присвоение других имен
-// console.log(y, m, d); // выведет 2025, 12, 31
+// function func(department, [name, surname], [year, month, day]) {
+// console.log(department, name, surname, year, month, day)
+// }
+// func( 'отдел разработки', ['Иван', 'Иванов'], [2018, 12, 31] );
 
-// let options = {
-// 	width:  400,
-// 	height: 500,
-// };
-// let {color:с = 'black', width:w, height:h} = options;
+// function func({color, width, height}) {
+// 	console.log(color, width, height)//red 400 500
+// }
+// func( {color: 'red', width: 400, height: 500} );
 
-function func() {
-	return obj = {
-		year:  2025,
-		month: 12,
-		day:   31,
-	};
+function func({width, height, color = 'black'}) {
+	console.log(color, width, height); //black 400 500 
 }
-let {year, month, day} = func();
+func( {width: 400, height: 500} );
