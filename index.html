@@ -9,21 +9,24 @@
 </head>
 <body>
     
-    <input type="text" class="inp" value="1, 1">
-    <p class='par'>poiuyt</p>
+    <input type="text" class="inp1" value="">
+    <input type="text" class="inp" value="">
+    <input type="text" class="inp" value="">
+    <input type="text" class="inp" value="">
+    <!-- <p class='par'>poiuyt</p> -->
     <input type="submit" value="button" class="btn">
     
     <script>
-        let inp = document.querySelector('.inp');
-        let par = document.querySelector('.par');
+        let inp1 = document.querySelector('.inp1');
+        let inp = document.querySelectorAll('.inp');
+        // let par = document.querySelector('.par');
         let btn = document.querySelector('.btn');
 
-        inp.addEventListener('focusout', function () {
-        let spl = inp.value.split(',');
-        let res = spl.reduce(function(a, b) {
-            return +a + +b;
-        });;
-        console.log(res/spl.length);
+        inp1.addEventListener('focusout', function () {            
+        let spl = inp1.value.split(' ');        
+        for (const i of inp) {
+            i.value = spl.shift()
+        }
 });
     </script>    
 </body>
