@@ -7,27 +7,23 @@
    
     <title>Document</title>
 </head>
-<body>
-    
-    <input type="text" class="inp1" value="">
+<body>    
+   
     <input type="text" class="inp" value="">
-    <input type="text" class="inp" value="">
-    <input type="text" class="inp" value="">
-    <!-- <p class='par'>poiuyt</p> -->
-    <input type="submit" value="button" class="btn">
     
     <script>
-        let inp1 = document.querySelector('.inp1');
-        let inp = document.querySelectorAll('.inp');
-        // let par = document.querySelector('.par');
-        let btn = document.querySelector('.btn');
+        let inp = document.querySelector('.inp');
 
-        inp1.addEventListener('focusout', function () {            
-        let spl = inp1.value.split(' ');        
-        for (const i of inp) {
-            i.value = spl.shift()
-        }
-});
+        inp.addEventListener('focusout', function () {            
+        let spl = inp.value.split(' ').map(func); 
+        function func (el) {            
+            el = el.split('');            
+            el[0] = el[0].toUpperCase();            
+            return el.join('');
+            }
+        inp.value = spl.join(' ');
+        }   
+    );
     </script>    
 </body>
 </html>
