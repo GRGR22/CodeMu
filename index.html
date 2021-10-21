@@ -8,10 +8,23 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="elem" class="content no-gap tyu rtyuio">sdf</div>
-    <input id="button1" type="submit">
+    
+    <input type="text" class="inp" value="1, 1">
+    <p class='par'>poiuyt</p>
+    <input type="submit" value="button" class="btn">
+    
+    <script>
+        let inp = document.querySelector('.inp');
+        let par = document.querySelector('.par');
+        let btn = document.querySelector('.btn');
 
-    <script src="index.js">
+        inp.addEventListener('focusout', function () {
+        let spl = inp.value.split(',');
+        let res = spl.reduce(function(a, b) {
+            return +a + +b;
+        });;
+        console.log(res/spl.length);
+});
     </script>    
 </body>
 </html>
