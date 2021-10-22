@@ -9,19 +9,17 @@
 </head>
 <body>   
     
-    <input type="text" class="input" value="">
-    <p class="parag"></p>    
+    <div class="text">[poiuyfgj</div>
+    <div class="text">;lkjhgfghoiuytrtyuiopoiuyt</div>
+    <div class="text">.,mnbvlkjhgfoiuytr</div>    
     
     <script>
-        let inp = document.querySelector('.input');
-        let par = document.querySelector('.parag');
-        
-        inp.addEventListener('keydown', function(e) {
-            if (e.keyCode === 13) {
-            par.innerHTML += `${inp.value}, `;
-            inp.value = '';
+        let div = document.querySelectorAll('.text');
+        for (const i of div) {
+            if (i.innerHTML.length>10){
+                i.innerHTML = i.innerHTML.slice(0, 10) + '...'
             } 
-        }) 
+        } 
     </script>    
 </body>
 </html>
