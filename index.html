@@ -9,17 +9,17 @@
 </head>
 <body>   
     
-    <div class="text">[poiuyfgj</div>
-    <div class="text">;lkjhgfghoiuytrtyuiopoiuyt</div>
-    <div class="text">.,mnbvlkjhgfoiuytr</div>    
+    <input type="number" class="input">    
     
     <script>
-        let div = document.querySelectorAll('.text');
-        for (const i of div) {
-            if (i.innerHTML.length>10){
-                i.innerHTML = i.innerHTML.slice(0, 10) + '...'
-            } 
-        } 
+        let inp = document.querySelector('.input');
+        inp.addEventListener('focusout', function () {
+            if (inp.value >= 1 && inp.value <= 100) {
+                inp.style.backgroundColor = 'green'
+            } else {
+                inp.style.backgroundColor = 'red'
+            }
+        }) 
     </script>    
 </body>
 </html>
