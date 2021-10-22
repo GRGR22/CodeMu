@@ -8,25 +8,18 @@
     <title>Document</title>
 </head>
 <body>    
-   <a href="http://ya.ru" class="anchor">adrf</a>  
-    <a href="ya.ru" class="anchor">adrf</a>
-    <a href="ya.ru" class="anchor">adrf</a>
-    <a href="ya.ru" class="anchor">adrf</a>
-    <input class="btn" type="submit">
+    <p class="para">2</p>
+    <p class="para">3</p>
+    <p class="para">4</p>
+    <p class="para">5</p>
     
     <script>
-        let anchor = document.querySelectorAll('.anchor');
-        
-        let btn = document.querySelector('.btn');
-        btn.addEventListener('click', function () { 
-            anchor.forEach(element => {            // task 13
-               if (element.href.includes('http://')) {
-                   element.innerHTML+= '\u2192';
-               }
+        let par = document.querySelectorAll('.para');
+        for (const i of par) {
+            i.addEventListener('click', function () { 
+                this.innerHTML = Number(this.innerHTML)**2
             });
-            
-        }   
-    );
+        }        
     </script>    
 </body>
 </html>
