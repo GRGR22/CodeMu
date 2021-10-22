@@ -8,21 +8,23 @@
     <title>Document</title>
 </head>
 <body>    
-    <input type="submit" value="-" class="minus">
-    <input type="text" class="num" value="0">
-    <input type="submit" value="+" class="plus">
+    <p class="parag">iuyt</p>
+    <p class="parag">lkjh</p>
+    <p class="parag">fghj</p>
+    <input type="text" class="input" value="0">
     
     
     <script>
-        let n = document.querySelector('.num');
-        let minus = document.querySelector('.minus');
-        let plus = document.querySelector('.plus');
-        minus.addEventListener('click', function() {
-           n.value>0 ? n.value-- : 0;
-        });
-        plus.addEventListener('click', function() {
-           n.value++;
-        });        
+        let inp = document.querySelector('.input');
+        let par = document.querySelectorAll('.parag');
+        let summOfClick = 0;
+        for (const i of par) {
+            i.addEventListener('click', function () {
+                summOfClick++;
+                inp.value = summOfClick;
+            })            
+        }
+                
     </script>    
 </body>
 </html>
