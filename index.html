@@ -7,24 +7,21 @@
    
     <title>Document</title>
 </head>
-<body>    
-    <p class="parag">iuyt</p>
-    <p class="parag">lkjh</p>
-    <p class="parag">fghj</p>
-    <input type="text" class="input" value="0">
+<body>   
     
+    <input type="text" class="input" value="">
+    <p class="parag"></p>    
     
     <script>
         let inp = document.querySelector('.input');
-        let par = document.querySelectorAll('.parag');
-        let summOfClick = 0;
-        for (const i of par) {
-            i.addEventListener('click', function () {
-                summOfClick++;
-                inp.value = summOfClick;
-            })            
-        }
-                
+        let par = document.querySelector('.parag');
+        
+        inp.addEventListener('keydown', function(e) {
+            if (e.keyCode === 13) {
+            par.innerHTML += `${inp.value}, `;
+            inp.value = '';
+            } 
+        }) 
     </script>    
 </body>
 </html>
