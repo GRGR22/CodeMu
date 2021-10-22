@@ -14,9 +14,8 @@
     <script>
         let inp = document.querySelector('.inp');
 
-        inp.addEventListener('focusout', function () {            
-        let spl = inp.value.split(' '); 
-        console.log (spl.length)        
+        inp.addEventListener('focusout', function () { 
+        inp.value = inp.value.split('.').reverse().join('-');       
         }   
     );
     </script>    
