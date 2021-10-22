@@ -16,11 +16,8 @@
         let inp = document.querySelector('.input');
         let btn = document.querySelector('.btn');
         btn.addEventListener('click', function () {
-            let randomStr = '';
-            for (let i = 0; i <= 8; i++) { 
-                randomStr += String.fromCharCode(Math.floor(Math.random() * (127 - 32)) + 32);
-            }           
-           inp.value = randomStr;
+            let splitInp = inp.value.split('').sort(() => Math.round(Math.random() * 100) - 50);                   
+            inp.value = splitInp.join('');
         }) 
     </script>    
 </body>
