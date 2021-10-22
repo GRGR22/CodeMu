@@ -8,18 +8,21 @@
     <title>Document</title>
 </head>
 <body>    
-    <p class="para">2</p>
-    <p class="para">3</p>
-    <p class="para">4</p>
-    <p class="para">5</p>
+    <input type="submit" value="-" class="minus">
+    <input type="text" class="num" value="0">
+    <input type="submit" value="+" class="plus">
+    
     
     <script>
-        let par = document.querySelectorAll('.para');
-        for (const i of par) {
-            i.addEventListener('click', function () { 
-                this.innerHTML = Number(this.innerHTML)**2
-            });
-        }        
+        let n = document.querySelector('.num');
+        let minus = document.querySelector('.minus');
+        let plus = document.querySelector('.plus');
+        minus.addEventListener('click', function() {
+           n.value>0 ? n.value-- : 0;
+        });
+        plus.addEventListener('click', function() {
+           n.value++;
+        });        
     </script>    
 </body>
 </html>
