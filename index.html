@@ -8,12 +8,7 @@
     <title>Document</title>
 </head>
 <body>    
-   
-    <!-- <p class="par">fghj</p> // task 11
-    <p class="par">fghj</p>
-    <p class="par">fghj</p> -->
-
-    <a href="ya.ru" class="anchor">adrf</a>  
+   <a href="http://ya.ru" class="anchor">adrf</a>  
     <a href="ya.ru" class="anchor">adrf</a>
     <a href="ya.ru" class="anchor">adrf</a>
     <a href="ya.ru" class="anchor">adrf</a>
@@ -24,13 +19,12 @@
         
         let btn = document.querySelector('.btn');
         btn.addEventListener('click', function () { 
-            anchor.forEach(element => {            // task 12
-                element.innerHTML+=element.href
+            anchor.forEach(element => {            // task 13
+               if (element.href.includes('http://')) {
+                   element.innerHTML+= '\u2192';
+               }
             });
-
-            // for (i=0; i<p.length; i++) {  // task 11
-            //     p[i].innerHTML+=i;
-            // }            
+            
         }   
     );
     </script>    
