@@ -15,13 +15,8 @@
         let inp = document.querySelector('.inp');
 
         inp.addEventListener('focusout', function () {            
-        let spl = inp.value.split(' ').map(func); 
-        function func (el) {            
-            el = el.split('');            
-            el[0] = el[0].toUpperCase();            
-            return el.join('');
-            }
-        inp.value = spl.join(' ');
+        let spl = inp.value.split(' '); 
+        console.log (spl.length)        
         }   
     );
     </script>    
