@@ -9,15 +9,14 @@
 </head>
 <body>   
     
-    <input type="text" class="input" value=""> 
-    <input type="submit" class="btn">   
+    <a href="#" class="anchor">anchor</a>
+    <input type="checkbox" class="checkbox">   
     
     <script>
-        let inp = document.querySelector('.input');
-        let btn = document.querySelector('.btn');
-        btn.addEventListener('click', function () {
-            let splitInp = inp.value.split('').sort(() => Math.round(Math.random() * 100) - 50);                   
-            inp.value = splitInp.join('');
+        let inp = document.querySelector('.anchor');
+        let btn = document.querySelector('.checkbox');
+        inp.addEventListener('click', function () {
+            (btn.checked) ? btn.checked = 0: btn.checked = 1;
         }) 
     </script>    
 </body>
