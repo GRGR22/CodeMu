@@ -10,13 +10,20 @@
 <body>   
     
     <input type="text" class="inp"> 
+    <input type="submit" class="btn">
     <p class="par"></p>  
     
     <script>
         let inp = document.querySelector('.inp');
+        let btn = document.querySelector('.btn');
         let par = document.querySelector('.par');
-        inp.addEventListener('keyup', function () {
-            par.innerHTML = `${(Number(inp.value)- 32) * 5/9} "C`;
+        btn.addEventListener('click', function () {
+            let res = 1;
+            let n = Number(inp.value);
+            while (n) {
+                res *= n--;
+                }
+            par.innerHTML = res;
         }) 
     </script>    
 </body>
