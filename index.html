@@ -9,19 +9,24 @@
 </head>
 <body>   
     
-    <input type="checkbox" id="elem" checked>
-    <button class="btn">checked / unchecked</button>
+    <input type="radio" name="elem" value="1" checked>
+    <input type="radio" name="elem" value="2">
+    <input type="radio" name="elem" value="3">
+    <input type="submit" id="button">
     <p class="par"></p>
 
     
     <script>
-        let elem = document.querySelector('#elem');
-        let btn = document.querySelector('.btn');
+        let radios = document.querySelectorAll('input[type="radio"]');
+        let button = document.querySelector('#button');
         let par = document.querySelector('.par');
-        btn.addEventListener ('click', function () {
-            // elem.checked ? par.innerHTML = 'привет' : par.innerHTML = 'пока';  
-            elem.checked = !elem.checked; // inversing checked
-        }) 
+
+        button.addEventListener('click', function() {
+            for (let radio of radios) {
+                radio.checked ? par.innerHTML = radio.value: 0;
+            }
+            
+    }); 
     </script>    
 </body>
 </html>
