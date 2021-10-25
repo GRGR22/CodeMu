@@ -9,15 +9,15 @@
 </head>
 <body>   
     
-    <textarea id="elem">text22</textarea>  
-    <p class="par"></p>
+    <input id="elem" disabled>
+    <button class="btn">disabled / enabled</button>
     
     <script>
-        let elem = document.querySelector('#elem'); // c textarea через value
-        let par = document.querySelector('.par');
-        elem.addEventListener('focusout', function () {
-            par.innerHTML = elem.value
-        })
+        let elem = document.querySelector('#elem');
+        let btn = document.querySelector('.btn')
+        btn.addEventListener ('click', function () {
+            elem.disabled ? elem.disabled = false: elem.disabled = true;  // true - elem is disabled
+        }) 
     </script>    
 </body>
 </html>
