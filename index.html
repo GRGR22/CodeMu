@@ -19,7 +19,8 @@
         let btn = document.querySelector('.btn');
         let par = document.querySelector('.par');
         btn.addEventListener ('click', function () {
-            elem.checked ? par.innerHTML = 'привет' : par.innerHTML = 'пока';  
+            // elem.checked ? par.innerHTML = 'привет' : par.innerHTML = 'пока';  
+            elem.checked = !elem.checked; // inversing checked
         }) 
     </script>    
 </body>
