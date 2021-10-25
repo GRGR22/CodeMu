@@ -9,14 +9,17 @@
 </head>
 <body>   
     
-    <input id="elem" disabled>
-    <button class="btn">disabled / enabled</button>
+    <input type="checkbox" id="elem" checked>
+    <button class="btn">checked / unchecked</button>
+    <p class="par"></p>
+
     
     <script>
         let elem = document.querySelector('#elem');
-        let btn = document.querySelector('.btn')
+        let btn = document.querySelector('.btn');
+        let par = document.querySelector('.par');
         btn.addEventListener ('click', function () {
-            elem.disabled ? elem.disabled = false: elem.disabled = true;  // true - elem is disabled
+            elem.checked ? par.innerHTML = 'привет' : par.innerHTML = 'пока';  
         }) 
     </script>    
 </body>
