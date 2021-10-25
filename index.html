@@ -9,24 +9,22 @@
 </head>
 <body>   
     
-    <input type="radio" name="elem" value="1" checked>
-    <input type="radio" name="elem" value="2">
-    <input type="radio" name="elem" value="3">
-    <input type="submit" id="button">
+    <input type="text" id="elem">
     <p class="par"></p>
-
     
     <script>
-        let radios = document.querySelectorAll('input[type="radio"]');
-        let button = document.querySelector('#button');
+        let elem = document.querySelector('#elem');
         let par = document.querySelector('.par');
 
-        button.addEventListener('click', function() {
-            for (let radio of radios) {
-                radio.checked ? par.innerHTML = radio.value: 0;
-            }
-            
-    }); 
+        elem.addEventListener('change', function() {
+            if (elem.value.length > 5) {
+                console.log('>5')
+                elem.style.border = '3px solid green';
+            } else {
+                console.log('<5')
+                elem.style.border = '3px solid red'; 
+            };
+        }); 
     </script>    
 </body>
 </html>
