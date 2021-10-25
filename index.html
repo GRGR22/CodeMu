@@ -9,19 +9,24 @@
 </head>
 <body>   
     
-    <input id="elem1" value="">
-    <input id="elem2" value="">
+    <select id="select">
+        <option>one</option>
+        <option selected>two</option>
+        <option>three</option>
+    </select>
+    <p class="par"></p>
+    <button class="btn">click</button>
     
     <script>
-        let elem1 = document.querySelector('#elem1');
-        let elem2 = document.querySelector('#elem2');
+        let sel = document.querySelector('#select');
+        let par = document.querySelector('.par');
+        let btn = document.querySelector('.btn');
+        
+        btn.addEventListener('click', func);        
 
-        elem1.addEventListener('keyup', function() {
-            elem1.value.length >= 2 ? elem2.focus(): 0;
-        }); 
-        elem2.addEventListener('keyup', function() {
-            elem2.value.length >= 2 ? elem2.blur(): 0;
-        });
+        function func() {
+            par.innerHTML = sel.value;
+        }; 
     </script>    
 </body>
 </html>
