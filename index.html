@@ -9,22 +9,15 @@
 </head>
 <body>   
     
-    <input type="text" class="inp"> 
-    <input type="submit" class="btn">
-    <p class="par"></p>  
+    <textarea id="elem">text22</textarea>  
+    <p class="par"></p>
     
     <script>
-        let inp = document.querySelector('.inp');
-        let btn = document.querySelector('.btn');
+        let elem = document.querySelector('#elem'); // c textarea через value
         let par = document.querySelector('.par');
-        btn.addEventListener('click', function () {
-            let res = 1;
-            let n = Number(inp.value);
-            while (n) {
-                res *= n--;
-                }
-            par.innerHTML = res;
-        }) 
+        elem.addEventListener('focusout', function () {
+            par.innerHTML = elem.value
+        })
     </script>    
 </body>
 </html>
