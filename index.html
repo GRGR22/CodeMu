@@ -9,22 +9,19 @@
 </head>
 <body>   
     
-    <input type="text" id="elem">
-    <p class="par"></p>
+    <input id="elem1" value="">
+    <input id="elem2" value="">
     
     <script>
-        let elem = document.querySelector('#elem');
-        let par = document.querySelector('.par');
+        let elem1 = document.querySelector('#elem1');
+        let elem2 = document.querySelector('#elem2');
 
-        elem.addEventListener('change', function() {
-            if (elem.value.length > 5) {
-                console.log('>5')
-                elem.style.border = '3px solid green';
-            } else {
-                console.log('<5')
-                elem.style.border = '3px solid red'; 
-            };
+        elem1.addEventListener('keyup', function() {
+            elem1.value.length >= 2 ? elem2.focus(): 0;
         }); 
+        elem2.addEventListener('keyup', function() {
+            elem2.value.length >= 2 ? elem2.blur(): 0;
+        });
     </script>    
 </body>
 </html>
