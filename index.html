@@ -8,36 +8,26 @@
     <title>Document</title>
 </head>
 <body>   
-    
     <select id="select">
-        <option selected>2020</option>
-        <option>2021</option>
-        <option>2022</option>
-        <option>2023</option>
-        <option>2024</option>
-        <option>2025</option>
-        <option>2026</option>
-        <option>2027</option>
-        <option>2028</option>
-        <option>2029</option>
-        <option>2030</option>        
+        <option value="1">jan</option>
+        <option value="2">feb</option>
+        <option value="3">mar</option>
+        <option value="4">apr</option>
+        <option value="5">may</option>
+        <option value="6">jun</option>
+        <option value="7">jul</option>
+        <option value="8">aug</option>
+        <option value="9">sep</option>
+        <option value="10">oct</option>
+        <option value="11">nov</option>
+        <option value="12">dec</option>
     </select>
-    <p class="par"></p>
-    <button class="btn">click</button>
-    
-    <script>
-        let sel = document.querySelector('#select');
-        let par = document.querySelector('.par');
-        let btn = document.querySelector('.btn');
-        let leap = ['не высокосный', 'высокосный']
-        
-        btn.addEventListener('click', func);        
 
-        function func() {
-            let ily = function(yr) {
-                return !((yr % 4) || (!(yr % 100) && (yr % 400)));
-            };
-            par.innerHTML = leap[+ily(sel.value)];
+    <script>
+        let date = new Date;
+        let sel = document.querySelector('#select');
+        for (const i of sel) {
+            (i.value == date.getMonth()+1) ? i.selected = true : 0;
         }; 
     </script>    
 </body>
