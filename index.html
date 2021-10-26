@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>   
+    <input type="number" class="inp">
     <select id="select">
         <option value="1">jan</option>
         <option value="2">feb</option>
@@ -24,11 +25,11 @@
     </select>
 
     <script>
-        let date = new Date;
+        let inp = document.querySelector('.inp');
         let sel = document.querySelector('#select');
-        for (const i of sel) {
-            (i.value == date.getMonth()+1) ? i.selected = true : 0;
-        }; 
+        inp.addEventListener('blur', function() {
+            sel.selectedIndex = Number(inp.value)-1
+        }) 
     </script>    
 </body>
 </html>
