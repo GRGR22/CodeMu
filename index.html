@@ -4,32 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
    
     <title>Document</title>
 </head>
 <body>   
-    <select id="select">
-        <option value="1">sun</option>
-        <option value="2" >mon</option>
-        <option value="3">thu</option>
-        <option value="4">web</option>
-        <option value="5">thi</option>
-        <option value="6">fry</option>
-        <option value="7">sat</option>
-    </select>
-    <button class="btn">click</button>
+    <ul id="elem">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
 
     <script>
-        let sel = document.querySelector('#select');
-        let btn = document.querySelector('.btn')
-        btn.addEventListener('click', func);
-        btn.addEventListener('dblclick', func);
+        let elem = document.querySelector('#elem');
+
+        elem.addEventListener('click', function(event) {
+            (event.target.tagName) == 'LI' ? event.target.innerHTML += '!':0;
+            (event.target.tagName) == 'UL' ? insertLi () : 0;     
+        });  
         
-        function func (e) {
-            // console.log(e.type == 'dblclick')
-            e.type == 'dblclick' ? select.style.border = '3px solid red':0;
-            e.type == 'click' ? select.style.border = '2px solid green':0;            
-        }        
+        function insertLi () {
+            let liLast = document.createElement('li');
+            liLast.innerHTML = 'text';
+            elem.append(liLast);
+        }
     </script>    
 </body>
 </html>
