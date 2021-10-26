@@ -22,13 +22,14 @@
     <script>
         let sel = document.querySelector('#select');
         let btn = document.querySelector('.btn')
-        btn.addEventListener('click', function () {            
-            // sel[sel.length-1].selected = true; // selected last option
-            //console.log(sel[sel.selectedIndex].text) // print selected option text
-            sel[sel.selectedIndex].text += '!'
-        })
+        btn.addEventListener('click', func);
+        btn.addEventListener('dblclick', func);
         
-        
+        function func (e) {
+            // console.log(e.type == 'dblclick')
+            e.type == 'dblclick' ? select.style.border = '3px solid red':0;
+            e.type == 'click' ? select.style.border = '2px solid green':0;            
+        }        
     </script>    
 </body>
 </html>
