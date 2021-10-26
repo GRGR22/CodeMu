@@ -8,28 +8,20 @@
     <title>Document</title>
 </head>
 <body>   
-    <input type="number" class="inp">
     <select id="select">
-        <option value="1">jan</option>
-        <option value="2">feb</option>
-        <option value="3">mar</option>
-        <option value="4">apr</option>
-        <option value="5">may</option>
-        <option value="6">jun</option>
-        <option value="7">jul</option>
-        <option value="8">aug</option>
-        <option value="9">sep</option>
-        <option value="10">oct</option>
-        <option value="11">nov</option>
-        <option value="12">dec</option>
+        <option value="1">sun</option>
+        <option value="2">mon</option>
+        <option value="3">thu</option>
+        <option value="4">web</option>
+        <option value="5">thi</option>
+        <option value="6">fry</option>
+        <option value="7">sat</option>
     </select>
 
     <script>
-        let inp = document.querySelector('.inp');
+        let date = new Date;
         let sel = document.querySelector('#select');
-        inp.addEventListener('blur', function() {
-            sel.selectedIndex = Number(inp.value)-1
-        }) 
+        sel.selectedIndex = date.getDay();
     </script>    
 </body>
 </html>
