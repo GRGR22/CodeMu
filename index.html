@@ -10,19 +10,25 @@
 <body>   
     <select id="select">
         <option value="1">sun</option>
-        <option value="2">mon</option>
+        <option value="2" >mon</option>
         <option value="3">thu</option>
         <option value="4">web</option>
         <option value="5">thi</option>
         <option value="6">fry</option>
         <option value="7">sat</option>
     </select>
+    <button class="btn">click</button>
 
     <script>
         let sel = document.querySelector('#select');
-        for (const i of sel) {
-            i.text += i.value;
-        }
+        let btn = document.querySelector('.btn')
+        btn.addEventListener('click', function () {            
+            // sel[sel.length-1].selected = true; // selected last option
+            //console.log(sel[sel.selectedIndex].text) // print selected option text
+            sel[sel.selectedIndex].text += '!'
+        })
+        
+        
     </script>    
 </body>
 </html>
