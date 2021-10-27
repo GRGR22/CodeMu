@@ -9,27 +9,21 @@
     <title>Document</title>
 </head>
 <body>   
-    <ul id="elem">
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-        <li>text</li>
-    </ul>
+    <input type="text" class="inp" value="">
+    <P class="par"></P>
+    
 
     <script>
-        let elem = document.querySelector('#elem');
+        let par = document.querySelector('.par');
+        let inp = document.querySelector('.inp');
 
-        elem.addEventListener('click', function(event) {
-            (event.target.tagName) == 'LI' ? event.target.innerHTML += '!':0;
-            (event.target.tagName) == 'UL' ? insertLi () : 0;     
+        inp.addEventListener('keydown', function(event) {
+            if (event.code == 'Enter') { 
+                par.innerHTML += inp.value
+                inp.value = '';
+            }             
         });  
         
-        function insertLi () {
-            let liLast = document.createElement('li');
-            liLast.innerHTML = 'text';
-            elem.append(liLast);
-        }
     </script>    
 </body>
 </html>
