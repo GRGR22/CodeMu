@@ -9,21 +9,28 @@
     <title>Document</title>
 </head>
 <body>   
-    <input type="text" class="inp" value="">
-    <P class="par"></P>
-    
+    <!-- <button id="elem">text</button> // task 1--> 
+    <ul id="elem">
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+        <li>text</li>
+    </ul>
 
     <script>
-        let par = document.querySelector('.par');
-        let inp = document.querySelector('.inp');
+        let elem = document.querySelector('#elem');
+        elem.addEventListener ('click', function(e) {
+            (e.target.tagName == 'LI' && event.ctrlKey) ? e.target.innerHTML += '1':0;
+            (e.target.tagName == 'LI' && event.shiftKey) ? e.target.innerHTML += '2':0;
+        })
 
-        inp.addEventListener('keydown', function(event) {
-            if (event.code == 'Enter') { 
-                par.innerHTML += inp.value
-                inp.value = '';
-            }             
-        });  
-        
+        // let elem = document.querySelector('#elem'); //task 1
+        // elem.addEventListener('click', function(event) {
+        //     if (event.altKey) {
+        //         elem.style.backgroundColor = 'red';
+        //     }
+        // });
     </script>    
 </body>
 </html>
